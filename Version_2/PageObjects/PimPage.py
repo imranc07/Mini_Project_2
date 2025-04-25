@@ -86,15 +86,25 @@ class OrangeHRMpimPage(OrangeHRMHomePage):
                 #Click on admin menu
                 self.wait.until(EC.element_to_be_clickable((By.XPATH, OrangeHRMLocators.admin_menu_locator))).click()
                 
-                # Verify the new user was created
+                # Enter username in the search box
+                self.wait.until(EC.presence_of_element_located((By.XPATH, OrangeHRMLocators.username_search_box_locator))).send_keys(OrangeHRMData().new_username)
+
+                # Click on search button
+                self.wait.until(EC.presence_of_element_located((By.XPATH, OrangeHRMLocators.search_button_locator))).click()
+
+                # Wait for the search results to load
                 new_username_display = self.wait.until(EC.presence_of_element_located((By.XPATH, OrangeHRMLocators.admin_user_text_locator))).text
                 expected_name = f"{OrangeHRMData().new_username}"
+
+                # Check if the new user exists in the admin records
                 if expected_name in new_username_display:
                     print(f"New user '{OrangeHRMData().firts_name} {OrangeHRMData().last_name}' exists in Admin records.")
                     return True
+
                 else:
                     print(f"Newly added user '{OrangeHRMData().firts_name} {OrangeHRMData().last_name}' not found in: {new_username_display}")
                     return False
+                
             # Handling exceptions 
             except ElementClickInterceptedException as error:
                 print(f"ERROR: ADMIN menu is not clickable! {error}")
@@ -104,7 +114,6 @@ class OrangeHRMpimPage(OrangeHRMHomePage):
             except (NoSuchElementException,ElementNotVisibleException) as error:
                 print(f"ERROR: ADMIN menu not found! {error}")
                 return False
-
 
     def new_user_login(self):
             """
