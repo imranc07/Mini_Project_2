@@ -16,7 +16,8 @@ class OrangeHRMData:
     dashboard_url = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
     
     # Path to the Excel file containing the test data
-    excel_file = "D:\\P-S\\Python-Selenium\\VScode\\GUVI_&_Tasks\\PAT Mini Project-2 Version 2\\TestData\\testdata.xlsx"
+    excel_file = "D:\\P-S\\Python-Selenium\\VScode\\GUVI_&_Tasks\\PAT Mini Project-2 Version 2\\Version_2\\TestData\\testdata.xlsx"
+
  
     # Name or index of the sheet within the Excel file containing test data
     sheet_number = "TestLog"
