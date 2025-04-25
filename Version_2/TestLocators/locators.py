@@ -46,3 +46,5 @@ class OrangeHRMLocators:
     save2_button_locator = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div/div/div[2]/div[1]/form/div[4]/button'
     add_button_locator = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button'
     admin_user_text_locator = '//div[contains(text(),"wanted")]'
+    username_search_box_locator = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input'
+    search_button_locator = "//button[text()=' Search ']"
